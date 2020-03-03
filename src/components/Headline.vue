@@ -1,6 +1,11 @@
 <template>
-  <div class="editor" style="opacity: 0.5">
-    <headline-text :value="value" :level="headingLevel" @showEditor="showEditor = true" />
+  <fragment>
+    <headline-text
+      :value="value"
+      :level="headingLevel"
+      @showEditor="showEditor = true"
+      :className="className"
+    />
     <portal to="editors" v-if="showEditor">
       <div class="text-editor">
         <editor-menu-bar :editor="editor" v-slot="{ commands, isActive }">
@@ -9,29 +14,36 @@
               class="menubar__button"
               :class="{ 'is-active': isActive.bold() }"
               @click="commands.bold"
-            >Bold</button>
+            >
+              Bold
+            </button>
 
             <button
               class="menubar__button"
               :class="{ 'is-active': isActive.italic() }"
               @click="commands.italic"
-            >Italic</button>
+            >
+              Italic
+            </button>
 
             <button
               class="menubar__button"
               :class="{ 'is-active': isActive.underline() }"
               @click="commands.underline"
-            >Underline</button>
+            >
+              Underline
+            </button>
           </div>
         </editor-menu-bar>
         <editor-content :editor="editor" />
         <button @click.prevent="updateContent">Save</button>
       </div>
     </portal>
-  </div>
+  </fragment>
 </template>
 
 <script>
+import { Fragment } from "vue-fragment";
 import { Editor, EditorContent, EditorMenuBar } from "tiptap";
 import HeadlineText from "./HeadlineText.vue";
 import { Underline, Bold, Italic } from "tiptap-extensions";
@@ -40,7 +52,8 @@ export default {
   components: {
     EditorContent,
     EditorMenuBar,
-    HeadlineText
+    HeadlineText,
+    Fragment
   },
   data() {
     return {
@@ -51,7 +64,7 @@ export default {
       })
     };
   },
-  props: ["value", "headingLevel"],
+  props: ["value", "headingLevel", "className"],
   beforeDestroy() {
     this.editor.destroy();
   },

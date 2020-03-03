@@ -1,0 +1,144 @@
+{
+  "type": "div",
+  "id": "2711924180",
+  "attrs": {
+    "class": ["page-margin"]
+  },
+  "children": [
+    {
+      "type": "section",
+      "id": "7699593830",
+      "component": "header",
+      "attrs": {
+        "class": ["header"]
+      },
+      "children": [
+        {
+          "type": "div",
+          "id": "7171340097",
+          "attrs": {
+            "class": ["container", "grid"]
+          },
+          "children": [
+            {
+              "type": "div",
+              "id": "4295626996",
+              "attrs": {
+                "class": ["flex-item"]
+              },
+              "children": [
+                {
+                  "type": "heading",
+                  "id": "3572775657",
+                  "block": "headline",
+                  "level": "1",
+                  "content": "We are better together"
+                },
+                {
+                  "type": "div",
+                  "id": "5666459340",
+                  "block": "text",
+                  "content": "<p>Join our free community of entrepreneurs and volunteer business mentors.</p>"
+                }
+              ]
+            },
+            {
+              "type": "div",
+              "id": "5497282367",
+              "attrs": {
+                "class": ["flex-item"]
+              },
+              "children": [
+                {
+                  "type": "img",
+                  "id": "0565301536",
+                  "block": "image",
+                  "attrs": {
+                    "src": "https://copyhackers-wpengine.netdna-ssl.com/wp-content/uploads/2020/01/robina-weermeijer-3KGF9R_0oHs-unsplash.jpg",
+                    "alt": "Image"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "id": "4148884629",
+      "component": "content",
+      "attrs": {
+        "class": ["text"]
+      },
+      "children": [
+        {
+          "type": "div",
+          "id": "0234067756",
+          "attrs": {
+            "class": ["container", "text"]
+          },
+          "children": [
+            {
+              "type": "heading",
+              "id": "7194458229",
+              "block": "headline",
+              "level": "2",
+              "content": "Learn about the course"
+            },
+            {
+              "type": "div",
+              "id": "9369991626",
+              "block": "text",
+              "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed imperdiet turpis. Quisque id sagittis libero. In risus eros, sollicitudin et convallis nec, tincidunt nec ex. Vestibulum porta tellus a lectus ultricies dapibus. Duis in nisl sed tortor gravida ultrices sed id nibh. Integer vitae est eget augue suscipit scelerisque ac sit amet justo. Nulla facilisi. Pellentesque sodales eros et libero ultricies facilisis. Praesent ornare, mi nec scelerisque vestibulum, tellus dolor ullamcorper nunc, in tristique magna odio sodales neque. Duis finibus commodo pellentesque. Donec bibendum mattis felis vitae consequat. Pellentesque turpis felis, pellentesque sed ipsum sit amet, finibus malesuada purus. Proin ultricies orci non eros rutrum, sed pretium metus mollis.</p><p>Sed sem ligula, vulputate ut tincidunt auctor, interdum sed neque. In tincidunt risus quis mi dignissim facilisis. Nam rutrum, sapien volutpat dictum ullamcorper, sem nisl hendrerit risus, nec consectetur ante felis vitae nisi. Nulla facilisi. Etiam porttitor, lacus sit amet vestibulum tristique, arcu est sagittis tortor, eget semper nisi nulla id sem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer ac mi dictum, dapibus nisi eu, pellentesque nibh. Nam viverra et ante in pretium. Cras sed leodignissim, posuere risus non, ornare dui. Aliquam id luctus urna. Aenean molestie egestas metus, ornare aliquet augue. Donec et vehicula urna, sit amet viverra orci. Aliquam molestie feugiat eros. Aliquam vulputate vel neque sit amet fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean hendrerit enim quis urna interdum, non semper magna tristique.</p>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "id": "7244135584",
+      "component": "testimonials",
+      "attrs": {
+        "class": ["testimonials"]
+      },
+      "children": [
+        {
+          "type": "div",
+          "id": "3257635143",
+          "attrs": {
+            "class": ["container", "grid"]
+          },
+          "children": [
+            {
+              "type": "div",
+              "id": "1406991335",
+              "attrs": {
+                "class": ["testimonial"]
+              },
+              "children": [
+                {
+                  "type": "img",
+                  "id": "6840849482",
+                  "block": "image",
+                  "attrs": {
+                    "class": "author",
+                    "src": "https://www.designforfounders.com/thebook/assets/images/testimonials/stefan_theo.jpg",
+                    "alt": "Author"
+                  }
+                },
+                {
+                  "type": "div",
+                  "id": "3758695518",
+                  "block": "text",
+                  "content": "<p>Design for Founders is an extremely helpful guide to those who know little about design! I’ve been designing for a couple years and I still found it helpful! It’s a must for entrepreneurs and designers everywhere!</p><p><i>Stefan Theofilos, Theo Technologies</i></p>"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

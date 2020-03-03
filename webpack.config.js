@@ -12,6 +12,7 @@ module.exports = {
   optimization: {
     minimizer: [new UglifyPlugin()]
   },
+  devtool: "eval-source-map",
   module: {
     rules: [
       {
@@ -31,6 +32,10 @@ module.exports = {
       {
         test: /\.css$/,
         use: ["vue-style-loader", "css-loader"]
+      },
+      {
+        test: /\.scss$/,
+        use: ["vue-style-loader", "css-loader", "sass-loader"]
       },
       {
         test: /\.(png|jpg|gif|svg)$/i,

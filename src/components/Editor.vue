@@ -1,5 +1,5 @@
 <template>
-  <div class="editor" style="opacity: 0.5">
+  <fragment>
     <div v-html="value" @click.prevent="showEditor = !showEditor"></div>
     <portal to="editors" v-if="showEditor">
       <div class="text-editor">
@@ -136,9 +136,10 @@
         </button>
       </div>
     </portal>
-  </div>
+  </fragment>
 </template>
 <script>
+import { Fragment } from "vue-fragment";
 import { Editor, EditorContent, EditorMenuBar } from "tiptap";
 import {
   Blockquote,
@@ -160,7 +161,8 @@ export default {
   name: "Editor",
   components: {
     EditorContent,
-    EditorMenuBar
+    EditorMenuBar,
+    Fragment
   },
   data() {
     return {

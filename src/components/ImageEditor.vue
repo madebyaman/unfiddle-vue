@@ -1,6 +1,11 @@
 <template>
-  <div>
-    <img :src="src" :alt="alt" @click.prevent="showEditor = true" />
+  <fragment>
+    <img
+      :src="attr.src"
+      :alt="attr.alt"
+      @click.prevent="showEditor = true"
+      :class="className"
+    />
     <portal to="editors" v-if="showEditor">
       <form @submit.prevent="uploadImage">
         <label for="file">Pick an image</label>
@@ -8,12 +13,16 @@
         <button type="submit">Submit</button>
       </form>
     </portal>
-  </div>
+  </fragment>
 </template>
 <script>
+import { Fragment } from "vue-fragment";
 export default {
   name: "ImageEditor",
-  props: ["src", "alt"],
+  components: {
+    Fragment
+  },
+  props: ["attr", "className"],
   data() {
     return {
       showEditor: false

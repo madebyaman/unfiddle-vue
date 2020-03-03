@@ -1,7 +1,7 @@
 <script>
 export default {
   name: "HeadlineText",
-  props: ["value", "level"],
+  props: ["value", "level", "className"],
   render: function(createElement) {
     return createElement("h" + this.level, {
       on: {
@@ -9,7 +9,8 @@ export default {
       },
       domProps: {
         innerHTML: this.value
-      }
+      },
+      class: this.className
     });
   }
 };

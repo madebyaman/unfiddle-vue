@@ -1,40 +1,44 @@
 <template>
-  <div>
-    <Editor v-model="text" />
-    <Headline v-model="heading" headingLevel="2" />
+  <div class="application">
+    <!-- <Editor v-model="text" />
+    <Headline v-model="heading" headingLevel="2" />-->
     <!-- <image-editor :src="img.src" :alt="img.alt" /> -->
-    <button-editor v-model="link" />
-    <portal-target name="editors"></portal-target>
+    <!-- <button-editor v-model="link" />-->
+    <Sidebar :data="data" @saveContent="save" />
+    <!-- <Ebook :data="data" class="page" /> -->
   </div>
 </template>
 <script>
-import Editor from "./components/Editor.vue";
-import Headline from "./components/Headline.vue";
-import ImageEditor from "./components/ImageEditor.vue";
-import ButtonEditor from "./components/ButtonEditor.vue";
+import axios from "axios";
+import Ebook from "./templates/Ebook.vue";
+import Sidebar from "./components/sidebars/Sidebar.vue";
 export default {
   name: "App",
   components: {
-    Editor,
-    Headline,
-    ImageEditor,
-    ButtonEditor
+    Ebook,
+    Sidebar
   },
   data() {
     return {
-      text: "<p>Hello</p>",
-      heading: "This world",
-      img: {
-        src:
-          "https://copyblogger.com/wp-content/uploads/2017/01/attract-connect.jpg",
-        alt: "Copyblogger"
-      },
-      link: {
-        text: "Buy Now",
-        url: "http://google.com"
-      }
+      data: null
     };
+  },
+  created: function() {
+    axios
+      .get("ebook.json")
+      .then(res => (this.data = res.data))
+      .catch(err => console.error(err));
+  },
+  methods: {
+    save(path, content) {
+      eval(path).content = content;
+    }
   }
 };
 </script>
-<style></style>
+<style>
+.application {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+</style>
