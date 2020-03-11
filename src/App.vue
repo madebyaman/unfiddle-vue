@@ -1,26 +1,27 @@
 <template>
   <div class="application">
-    <!-- <Editor v-model="text" />
-    <Headline v-model="heading" headingLevel="2" />-->
-    <!-- <image-editor :src="img.src" :alt="img.alt" /> -->
-    <!-- <button-editor v-model="link" />-->
-    <Sidebar :data="data" @saveContent="save" />
-    <!-- <Ebook :data="data" class="page" /> -->
+    <sidebar :data="data" @update="update" />
+    <page-tree :data="data" @save="save" />
   </div>
 </template>
 <script>
 import axios from "axios";
-import Ebook from "./templates/Ebook.vue";
-import Sidebar from "./components/sidebars/Sidebar.vue";
+// Todo
+// Add Component
+// Design Component
+import PageTree from "./components/PageTree.vue";
+import Sidebar from "./components/Sidebars/Sidebar.vue";
 export default {
   name: "App",
   components: {
-    Ebook,
+    PageTree,
     Sidebar
   },
   data() {
     return {
-      data: null
+      data: null,
+      currentlyEditingNode: null,
+      openEditor: null
     };
   },
   created: function() {
@@ -32,6 +33,9 @@ export default {
   methods: {
     save(path, content) {
       eval(path).content = content;
+    },
+    update(path, content) {
+      eval(path).options = content;
     }
   }
 };
@@ -39,6 +43,6 @@ export default {
 <style>
 .application {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 3fr;
 }
 </style>

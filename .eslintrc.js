@@ -1,4 +1,5 @@
 module.exports = {
+  "eslint.autoFixOnSave": true,
   root: true,
   env: {
     // this section will be used to determine which APIs are available to us
