@@ -1,0 +1,5 @@
+{
+  "vetur.format.defaultFormatter.js": "vscode-typescript",
+ "vetur.format.defaultFormatter.html": "none",
+ "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+}

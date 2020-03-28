@@ -12,10 +12,9 @@
       "attrs": {
         "class": ["header"]
       },
-      "options": {
-        "style": {
-          "backgroundColor": "#fffff0"
-        }
+      "options": {},
+      "style": {
+        "backgroundColor": "#fffff0"
       },
       "children": [
         {

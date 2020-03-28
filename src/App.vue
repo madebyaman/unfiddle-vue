@@ -1,16 +1,21 @@
 <template>
   <div class="application">
-    <sidebar :data="data" @update="update" />
-    <page-tree :data="data" @save="save" />
+    <!-- <sidebar :data="data" @update="update" /> -->
+    <sidebar />
+    <page-tree
+      @save="save"
+      @addComponent="id => addComponent(id)"
+      @editingComponent="editComponent = true"
+    />
   </div>
 </template>
 <script>
-import axios from "axios";
+import { mapActions } from "vuex";
 // Todo
 // Add Component
 // Design Component
 import PageTree from "./components/PageTree.vue";
-import Sidebar from "./components/Sidebars/Sidebar.vue";
+import Sidebar from "./components/Sidebar.vue";
 export default {
   name: "App",
   components: {
@@ -19,23 +24,35 @@ export default {
   },
   data() {
     return {
-      data: null,
       currentlyEditingNode: null,
-      openEditor: null
+      openEditor: null,
+      showAddComponentMenu: true,
+      editComponent: false,
+      index: undefined
     };
   },
   created: function() {
-    axios
-      .get("ebook.json")
-      .then(res => (this.data = res.data))
-      .catch(err => console.error(err));
+    this.fetchContents();
   },
   methods: {
+    ...mapActions(["fetchContents"]),
     save(path, content) {
       eval(path).content = content;
     },
     update(path, content) {
       eval(path).options = content;
+    },
+    addComponent(id) {
+      const newChild = Object.assign(
+        {},
+        this.data.children.slice(id, id + 1)[0]
+      );
+      newChild.id = Math.floor(Math.random() * 100);
+      this.data.children.push(newChild);
+    },
+    editingComponent(index) {
+      this.index = index;
+      this.editComponent = true;
     }
   }
 };
